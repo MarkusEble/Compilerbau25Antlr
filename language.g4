@@ -48,7 +48,7 @@ SUMOP: '+' | '-';
 // bitAndOrExpr tokens
 
 // andOrExpr tokens
-
+ANDOROP: '&&' | '||';
 // cmpExpr tokens
 CMPOP: '==' | '<' | '>';
 

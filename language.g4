@@ -11,18 +11,22 @@ expr:
 
      // sumExpr
      expr SUMOP expr #exprSumOp |
-     NUMBER #exprNumber
+     NUMBER #exprNumber |
 
      // shifExpr
 
      // bitAndOrExpr
+     expr BITAND expr #exprBitAnd |
+     expr BITOR expr #exprBitOr
 
      // andOrExpr
 
      // cmpExpr
+     expr CMPOP expr #exprCmpOp |
+     NUMBER #exprCmpOp |
 
      // questionMarkExpr
-
+     expr QM expr DC expr #exprQm
 ;
 
 // tokens
@@ -46,13 +50,17 @@ SUMOP: '+' | '-';
 // shiftExpr tokens
 
 // bitAndOrExpr tokens
+BITAND: '&';
+BITOR: '|';
 
 // andOrExpr tokens
 
 // cmpExpr tokens
+CMPOP: '==' | '<' | '>';
 
 // questionMarkExpr tokens
-
+DC: ':';
+QM: '?';
 
 // skip whitespaces
 WS: [ \t\r\n]+ -> skip;

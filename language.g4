@@ -7,6 +7,7 @@ expr:
      // dashExpr
 
      // mulDivExpr
+     expr MULDIVOP expr #exprMulDivOp |
 
      // sumExpr
      expr SUMOP expr #exprSumOp |
@@ -15,6 +16,8 @@ expr:
      // shifExpr
 
      // bitAndOrExpr
+     expr BITAND expr #exprBitAnd |
+     expr BITOR expr #exprBitOr |
 
      // andOrExpr
 
@@ -40,6 +43,7 @@ UNARYOP: '-' | '!';
 // dashExpr tokens
 
 // mulDivExpr tokens
+MULDIVOP: '*' | '/';
 
 // sumExpr tokens
 SUMOP: '+' | '-';
@@ -47,6 +51,8 @@ SUMOP: '+' | '-';
 // shiftExpr tokens
 
 // bitAndOrExpr tokens
+BITAND: '&';
+BITOR: '|';
 
 // andOrExpr tokens
 

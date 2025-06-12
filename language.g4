@@ -10,7 +10,7 @@ expr:
 
      // sumExpr
      expr SUMOP expr #exprSumOp |
-     NUMBER #exprNumber
+     NUMBER #exprNumber |
 
      // shifExpr
 
@@ -19,6 +19,8 @@ expr:
      // andOrExpr
 
      // cmpExpr
+     expr CMPOP expr #exprCmpOp |
+     NUMBER #exprCmpOp
 
      // questionMarkExpr
 
@@ -48,6 +50,7 @@ SUMOP: '+' | '-';
 // andOrExpr tokens
 
 // cmpExpr tokens
+CMPOP: '==' | '<' | '>';
 
 // questionMarkExpr tokens
 

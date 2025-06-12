@@ -3,7 +3,7 @@ grammar language;
 // start symbol
 expr: 
      // unaryExpr
-
+    UNARYOP expr #exprUnaryOp|
      // dashExpr
     expr DASHOP expr #exprDashOp |
     NUMBER #exprNumber |
@@ -40,6 +40,7 @@ LPAREN: '(';
 RPAREN: ')';
 
 // unaryExpr tokens
+UNARYOP: '-' | '!';
 
 // dashExpr tokens
 DASHOP: '^';

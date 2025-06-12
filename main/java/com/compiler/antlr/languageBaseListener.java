@@ -1,4 +1,4 @@
-// Generated from /Users/i589213/Documents/dhbw/semester4/compilerbau/Compilerbau25Antlr/language.g4 by ANTLR 4.13.1
+// Generated from /Users/i587961/Documents/Compilerbau25Antlr/language.g4 by ANTLR 4.13.2
 package com.compiler.antlr;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -17,13 +17,13 @@ public class languageBaseListener implements languageListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExprMulDivOp(languageParser.ExprMulDivOpContext ctx) { }
+	@Override public void enterExprCmpOp(languageParser.ExprCmpOpContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExprMulDivOp(languageParser.ExprMulDivOpContext ctx) { }
+	@Override public void exitExprCmpOp(languageParser.ExprCmpOpContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -36,6 +36,30 @@ public class languageBaseListener implements languageListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitExprSumOp(languageParser.ExprSumOpContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExprQm(languageParser.ExprQmContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprQm(languageParser.ExprQmContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExprUnaryOp(languageParser.ExprUnaryOpContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprUnaryOp(languageParser.ExprUnaryOpContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

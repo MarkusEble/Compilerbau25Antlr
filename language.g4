@@ -16,7 +16,7 @@ expr:
 
      // bitAndOrExpr
      expr BITAND expr #exprBitAnd |
-     expr BITOR expr #exprBitOr
+     expr BITOR expr #exprBitOr |
 
      // andOrExpr
 

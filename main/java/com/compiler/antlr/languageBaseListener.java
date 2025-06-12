@@ -1,4 +1,4 @@
-// Generated from c:/git/Compilerbau25/src/main/antlr4/language.g4 by ANTLR 4.13.1
+// Generated from /Users/i589213/Documents/dhbw/semester4/compilerbau/Compilerbau25Antlr/language.g4 by ANTLR 4.13.1
 package com.compiler.antlr;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -12,6 +12,18 @@ import org.antlr.v4.runtime.tree.TerminalNode;
  */
 @SuppressWarnings("CheckReturnValue")
 public class languageBaseListener implements languageListener {
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExprMulDivOp(languageParser.ExprMulDivOpContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprMulDivOp(languageParser.ExprMulDivOpContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

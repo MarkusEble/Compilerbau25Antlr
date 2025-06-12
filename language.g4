@@ -23,7 +23,7 @@ expr:
      NUMBER #exprCmpOp
 
      // questionMarkExpr
-
+     expr QM expr DC expr #exprQm
 ;
 
 // tokens
@@ -53,7 +53,8 @@ SUMOP: '+' | '-';
 CMPOP: '==' | '<' | '>';
 
 // questionMarkExpr tokens
-
+DC: ':';
+QM: '?';
 
 // skip whitespaces
 WS: [ \t\r\n]+ -> skip;

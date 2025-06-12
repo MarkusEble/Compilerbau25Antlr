@@ -1,6 +1,7 @@
 package com.compiler.antlrcompiler;
 
 import com.compiler.antlr.languageParser.ExprContext;
+import com.compiler.antlr.languageParser.ExprQmContext;
 
 public class ExprEval extends com.compiler.antlr.languageBaseVisitor<Integer> {
 
@@ -46,7 +47,19 @@ public class ExprEval extends com.compiler.antlr.languageBaseVisitor<Integer> {
      }
 
      // questionMarkExpr
+    @Override
+    public Integer visitExprQm(ExprQmContext ctx) {
+        ExprContext predicate = ctx.expr(0);
+        int predicateValue = visit(predicate);
 
+        if(predicateValue != 0){ // True
+            ExprContext operand = ctx.expr(1);
+            return visit(operand);
+        } else{ // False
+            ExprContext operand = ctx.expr(2);
+            return visit(operand);
+        }
+    }
 
 @Override public Integer visitExprNumber(com.compiler.antlr.languageParser.ExprNumberContext ctx) { 
     int number = Integer.valueOf(ctx.NUMBER().getText());

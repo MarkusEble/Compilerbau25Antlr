@@ -10,11 +10,13 @@ expr:
 
      // sumExpr
      expr SUMOP expr #exprSumOp |
-     NUMBER #exprNumber
+     NUMBER #exprNumber |
 
      // shifExpr
 
      // bitAndOrExpr
+     expr BITAND expr #exprBitAnd |
+     expr BITOR expr #exprBitOr
 
      // andOrExpr
 
@@ -44,6 +46,8 @@ SUMOP: '+' | '-';
 // shiftExpr tokens
 
 // bitAndOrExpr tokens
+BITAND: '&';
+BITOR: '|';
 
 // andOrExpr tokens
 

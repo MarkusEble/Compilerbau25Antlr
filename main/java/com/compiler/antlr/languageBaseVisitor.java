@@ -1,4 +1,4 @@
-// Generated from c:/git/Compilerbau25/src/main/antlr4/language.g4 by ANTLR 4.13.1
+// Generated from /Users/i587961/Documents/Compilerbau25Antlr/language.g4 by ANTLR 4.13.2
 package com.compiler.antlr;
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
@@ -19,6 +19,13 @@ public class languageBaseVisitor<T> extends AbstractParseTreeVisitor<T> implemen
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitExprSumOp(languageParser.ExprSumOpContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitExprUnaryOp(languageParser.ExprUnaryOpContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

@@ -1,4 +1,4 @@
-// Generated from c:/git/Compilerbau25/src/main/antlr4/language.g4 by ANTLR 4.13.1
+// Generated from /Users/i587961/Documents/Compilerbau25Antlr/language.g4 by ANTLR 4.13.2
 package com.compiler.antlr;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -24,6 +24,18 @@ public class languageBaseListener implements languageListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitExprSumOp(languageParser.ExprSumOpContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExprUnaryOp(languageParser.ExprUnaryOpContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprUnaryOp(languageParser.ExprUnaryOpContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

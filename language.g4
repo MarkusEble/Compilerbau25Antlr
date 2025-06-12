@@ -3,7 +3,7 @@ grammar language;
 // start symbol
 expr: 
      // unaryExpr
-    UNARYOP expr #exprUnary|
+    UNARYOP expr #exprUnaryOp|
      // dashExpr
 
      // mulDivExpr

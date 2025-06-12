@@ -1,4 +1,4 @@
-// Generated from c:/git/Compilerbau25/src/main/antlr4/language.g4 by ANTLR 4.13.1
+// Generated from /Users/i587961/Documents/Compilerbau25Antlr/language.g4 by ANTLR 4.13.2
 package com.compiler.antlr;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -9,15 +9,15 @@ import java.util.List;
 import java.util.Iterator;
 import java.util.ArrayList;
 
-@SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast", "CheckReturnValue"})
+@SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast", "CheckReturnValue", "this-escape"})
 public class languageParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.13.1", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.13.2", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		NUMBER=1, IDENT=2, LPAREN=3, RPAREN=4, SUMOP=5, WS=6;
+		NUMBER=1, IDENT=2, LPAREN=3, RPAREN=4, UNARYOP=5, SUMOP=6, WS=7;
 	public static final int
 		RULE_expr = 0;
 	private static String[] makeRuleNames() {
@@ -35,7 +35,7 @@ public class languageParser extends Parser {
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, "NUMBER", "IDENT", "LPAREN", "RPAREN", "SUMOP", "WS"
+			null, "NUMBER", "IDENT", "LPAREN", "RPAREN", "UNARYOP", "SUMOP", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -126,6 +126,27 @@ public class languageParser extends Parser {
 		}
 	}
 	@SuppressWarnings("CheckReturnValue")
+	public static class ExprUnaryOpContext extends ExprContext {
+		public TerminalNode UNARYOP() { return getToken(languageParser.UNARYOP, 0); }
+		public ExprContext expr() {
+			return getRuleContext(ExprContext.class,0);
+		}
+		public ExprUnaryOpContext(ExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof languageListener ) ((languageListener)listener).enterExprUnaryOp(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof languageListener ) ((languageListener)listener).exitExprUnaryOp(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof languageVisitor ) return ((languageVisitor<? extends T>)visitor).visitExprUnaryOp(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class ExprNumberContext extends ExprContext {
 		public TerminalNode NUMBER() { return getToken(languageParser.NUMBER, 0); }
 		public ExprNumberContext(ExprContext ctx) { copyFrom(ctx); }
@@ -159,18 +180,37 @@ public class languageParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			{
-			_localctx = new ExprNumberContext(_localctx);
-			_ctx = _localctx;
-			_prevctx = _localctx;
+			setState(6);
+			_errHandler.sync(this);
+			switch (_input.LA(1)) {
+			case UNARYOP:
+				{
+				_localctx = new ExprUnaryOpContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
 
-			setState(3);
-			match(NUMBER);
+				setState(3);
+				match(UNARYOP);
+				setState(4);
+				expr(3);
+				}
+				break;
+			case NUMBER:
+				{
+				_localctx = new ExprNumberContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+				setState(5);
+				match(NUMBER);
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(10);
+			setState(13);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,0,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,1,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
@@ -179,18 +219,18 @@ public class languageParser extends Parser {
 					{
 					_localctx = new ExprSumOpContext(new ExprContext(_parentctx, _parentState));
 					pushNewRecursionContext(_localctx, _startState, RULE_expr);
-					setState(5);
+					setState(8);
 					if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
-					setState(6);
+					setState(9);
 					match(SUMOP);
-					setState(7);
+					setState(10);
 					expr(3);
 					}
 					} 
 				}
-				setState(12);
+				setState(15);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,0,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,1,_ctx);
 			}
 			}
 		}
@@ -221,16 +261,18 @@ public class languageParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\u0006\u000e\u0002\u0000\u0007\u0000\u0001\u0000\u0001\u0000"+
-		"\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000\u0005\u0000\t\b\u0000"+
-		"\n\u0000\f\u0000\f\t\u0000\u0001\u0000\u0000\u0001\u0000\u0001\u0000\u0000"+
-		"\u0000\r\u0000\u0002\u0001\u0000\u0000\u0000\u0002\u0003\u0006\u0000\uffff"+
-		"\uffff\u0000\u0003\u0004\u0005\u0001\u0000\u0000\u0004\n\u0001\u0000\u0000"+
-		"\u0000\u0005\u0006\n\u0002\u0000\u0000\u0006\u0007\u0005\u0005\u0000\u0000"+
-		"\u0007\t\u0003\u0000\u0000\u0003\b\u0005\u0001\u0000\u0000\u0000\t\f\u0001"+
-		"\u0000\u0000\u0000\n\b\u0001\u0000\u0000\u0000\n\u000b\u0001\u0000\u0000"+
-		"\u0000\u000b\u0001\u0001\u0000\u0000\u0000\f\n\u0001\u0000\u0000\u0000"+
-		"\u0001\n";
+		"\u0004\u0001\u0007\u0011\u0002\u0000\u0007\u0000\u0001\u0000\u0001\u0000"+
+		"\u0001\u0000\u0001\u0000\u0003\u0000\u0007\b\u0000\u0001\u0000\u0001\u0000"+
+		"\u0001\u0000\u0005\u0000\f\b\u0000\n\u0000\f\u0000\u000f\t\u0000\u0001"+
+		"\u0000\u0000\u0001\u0000\u0001\u0000\u0000\u0000\u0011\u0000\u0006\u0001"+
+		"\u0000\u0000\u0000\u0002\u0003\u0006\u0000\uffff\uffff\u0000\u0003\u0004"+
+		"\u0005\u0005\u0000\u0000\u0004\u0007\u0003\u0000\u0000\u0003\u0005\u0007"+
+		"\u0005\u0001\u0000\u0000\u0006\u0002\u0001\u0000\u0000\u0000\u0006\u0005"+
+		"\u0001\u0000\u0000\u0000\u0007\r\u0001\u0000\u0000\u0000\b\t\n\u0002\u0000"+
+		"\u0000\t\n\u0005\u0006\u0000\u0000\n\f\u0003\u0000\u0000\u0003\u000b\b"+
+		"\u0001\u0000\u0000\u0000\f\u000f\u0001\u0000\u0000\u0000\r\u000b\u0001"+
+		"\u0000\u0000\u0000\r\u000e\u0001\u0000\u0000\u0000\u000e\u0001\u0001\u0000"+
+		"\u0000\u0000\u000f\r\u0001\u0000\u0000\u0000\u0002\u0006\r";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

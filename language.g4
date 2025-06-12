@@ -7,6 +7,7 @@ expr:
      // dashExpr
 
      // mulDivExpr
+     expr MULDIVOP expr #exprMulDivOp |
 
      // sumExpr
      expr SUMOP expr #exprSumOp |
@@ -37,6 +38,7 @@ RPAREN: ')';
 // dashExpr tokens
 
 // mulDivExpr tokens
+MULDIVOP: '*' | '/';
 
 // sumExpr tokens
 SUMOP: '+' | '-';

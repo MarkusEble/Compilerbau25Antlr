@@ -5,6 +5,8 @@ expr:
      // unaryExpr
 
      // dashExpr
+    expr DASHOP expr #exprDashOp |
+    NUMBER #exprNumber |
 
      // mulDivExpr
 
@@ -21,9 +23,6 @@ expr:
      // cmpExpr
      expr CMPOP expr #exprCmpOp |
      NUMBER #exprCmpOp
-
-     // questionMarkExpr
-     expr QM expr DC expr #exprQm
 ;
 
 // tokens
@@ -37,7 +36,7 @@ RPAREN: ')';
 // unaryExpr tokens
 
 // dashExpr tokens
-
+DASHOP: '^';
 // mulDivExpr tokens
 
 // sumExpr tokens
@@ -51,10 +50,6 @@ SUMOP: '+' | '-';
 
 // cmpExpr tokens
 CMPOP: '==' | '<' | '>';
-
-// questionMarkExpr tokens
-DC: ':';
-QM: '?';
 
 // skip whitespaces
 WS: [ \t\r\n]+ -> skip;

@@ -21,9 +21,11 @@ expr:
      // andOrExpr
 
      // cmpExpr
+     expr CMPOP expr #exprCmpOp |
+     NUMBER #exprCmpOp
 
      // questionMarkExpr
-
+     expr QM expr DC expr #exprQm
 ;
 
 // tokens
@@ -52,9 +54,11 @@ BITOR: '|';
 // andOrExpr tokens
 
 // cmpExpr tokens
+CMPOP: '==' | '<' | '>';
 
 // questionMarkExpr tokens
-
+DC: ':';
+QM: '?';
 
 // skip whitespaces
 WS: [ \t\r\n]+ -> skip;

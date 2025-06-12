@@ -8,6 +8,18 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface languageListener extends ParseTreeListener {
 	/**
+	 * Enter a parse tree produced by the {@code exprCmpOp}
+	 * labeled alternative in {@link languageParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprCmpOp(languageParser.ExprCmpOpContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code exprCmpOp}
+	 * labeled alternative in {@link languageParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprCmpOp(languageParser.ExprCmpOpContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code exprSumOp}
 	 * labeled alternative in {@link languageParser#expr}.
 	 * @param ctx the parse tree
@@ -19,6 +31,18 @@ public interface languageListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitExprSumOp(languageParser.ExprSumOpContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code exprQm}
+	 * labeled alternative in {@link languageParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprQm(languageParser.ExprQmContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code exprQm}
+	 * labeled alternative in {@link languageParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprQm(languageParser.ExprQmContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code exprUnaryOp}
 	 * labeled alternative in {@link languageParser#expr}.

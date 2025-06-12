@@ -20,7 +20,7 @@ expr:
 
      // cmpExpr
      expr CMPOP expr #exprCmpOp |
-     NUMBER #exprCmpOp
+     NUMBER #exprCmpOp |
 
      // questionMarkExpr
      expr QM expr DC expr #exprQm

@@ -17,6 +17,18 @@ public class languageBaseListener implements languageListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterExprCmpOp(languageParser.ExprCmpOpContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprCmpOp(languageParser.ExprCmpOpContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterExprSumOp(languageParser.ExprSumOpContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -24,6 +36,18 @@ public class languageBaseListener implements languageListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitExprSumOp(languageParser.ExprSumOpContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExprQm(languageParser.ExprQmContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprQm(languageParser.ExprQmContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

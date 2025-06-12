@@ -11,12 +11,26 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface languageVisitor<T> extends ParseTreeVisitor<T> {
 	/**
+	 * Visit a parse tree produced by the {@code exprCmpOp}
+	 * labeled alternative in {@link languageParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExprCmpOp(languageParser.ExprCmpOpContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code exprSumOp}
 	 * labeled alternative in {@link languageParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitExprSumOp(languageParser.ExprSumOpContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code exprQm}
+	 * labeled alternative in {@link languageParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExprQm(languageParser.ExprQmContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code exprUnaryOp}
 	 * labeled alternative in {@link languageParser#expr}.

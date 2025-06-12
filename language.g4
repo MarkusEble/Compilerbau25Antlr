@@ -5,6 +5,8 @@ expr:
      // unaryExpr
 
      // dashExpr
+    expr DASHOP expr #exprDashOp |
+    NUMBER #exprNumber |
 
      // mulDivExpr
      expr MULDIVOP expr #exprMulDivOp |
@@ -40,7 +42,7 @@ RPAREN: ')';
 // unaryExpr tokens
 
 // dashExpr tokens
-
+DASHOP: '^';
 // mulDivExpr tokens
 MULDIVOP: '*' | '/';
 
@@ -57,10 +59,6 @@ BITOR: '|';
 
 // cmpExpr tokens
 CMPOP: '==' | '<' | '>';
-
-// questionMarkExpr tokens
-DC: ':';
-QM: '?';
 
 // skip whitespaces
 WS: [ \t\r\n]+ -> skip;

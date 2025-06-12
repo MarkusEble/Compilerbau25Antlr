@@ -3,7 +3,7 @@ grammar language;
 // start symbol
 expr: 
      // unaryExpr
-
+    UNARYOP expr #exprUnary|
      // dashExpr
 
      // mulDivExpr
@@ -33,6 +33,7 @@ LPAREN: '(';
 RPAREN: ')';
 
 // unaryExpr tokens
+UNARYOP: '-' | '!';
 
 // dashExpr tokens
 

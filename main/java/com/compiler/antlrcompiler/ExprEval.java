@@ -5,6 +5,18 @@ import com.compiler.antlr.languageParser.ExprContext;
 public class ExprEval extends com.compiler.antlr.languageBaseVisitor<Integer> {
 
      // unaryExpr
+@Override public Integer visitExprUnaryOp(com.compiler.antlr.languageParser.exprUnaryContext ctx) {Add commentMore actions
+         ExprContext operand0 = ctx.expr(0);
+         int operand0Value = visit(operand0);
+         if (ctx.UNARYOP().getText().equals("-")) {
+             return  - operand0Value;
+         } else {
+             if(operand0Value == 0){
+                 return  1;
+             } else
+                 return  0;
+         }
+     }
 
      // dashExpr
 

@@ -17,6 +17,17 @@ public class ExprEval extends com.compiler.antlr.languageBaseVisitor<Integer> {
     }
 
      // mulDivExpr
+@Override public Integer visitExprMulDivOp(com.compiler.antlr.languageParser.ExprMulDivOpContext ctx) {
+    ExprContext operand0 = ctx.expr(0);
+    int operand0Value = visit(operand0);
+    ExprContext operand1 = ctx.expr(1);
+    int operand1Value = visit(operand1);
+    if (ctx.MULDIVOP().getText().equals("*")) {
+        return operand0Value * operand1Value;
+    } else {
+        return operand0Value / operand1Value;
+    }
+}
 
      // sumExpr
 @Override public Integer visitExprSumOp(com.compiler.antlr.languageParser.ExprSumOpContext ctx) {
@@ -34,6 +45,23 @@ public class ExprEval extends com.compiler.antlr.languageBaseVisitor<Integer> {
      // shifExpr
 
      // bitAndOrExpr
+     @Override
+     public Integer visitExprBitAnd(com.compiler.antlr.languageParser.ExprBitAndContext ctx) {
+         ExprContext operand0 = ctx.expr(0);
+         int operand0Value = visit(operand0);
+         ExprContext operand1 = ctx.expr(1);
+         int operand1Value = visit(operand1);
+         return operand0Value & operand1Value;
+     }
+
+    @Override
+    public Integer visitExprBitOr(com.compiler.antlr.languageParser.ExprBitOrContext ctx) {
+        ExprContext operand0 = ctx.expr(0);
+        int operand0Value = visit(operand0);
+        ExprContext operand1 = ctx.expr(1);
+        int operand1Value = visit(operand1);
+        return operand0Value | operand1Value;
+    }
 
      // andOrExpr
 

@@ -9,6 +9,7 @@ expr:
     NUMBER #exprNumber |
 
      // mulDivExpr
+     expr MULDIVOP expr #exprMulDivOp |
 
      // sumExpr
      expr SUMOP expr #exprSumOp |
@@ -17,12 +18,17 @@ expr:
      // shifExpr
 
      // bitAndOrExpr
+     expr BITAND expr #exprBitAnd |
+     expr BITOR expr #exprBitOr |
 
      // andOrExpr
 
      // cmpExpr
      expr CMPOP expr #exprCmpOp |
-     NUMBER #exprCmpOp
+     NUMBER #exprCmpOp |
+
+     // questionMarkExpr
+     expr QM expr DC expr #exprQm
 ;
 
 // tokens
@@ -38,6 +44,7 @@ RPAREN: ')';
 // dashExpr tokens
 DASHOP: '^';
 // mulDivExpr tokens
+MULDIVOP: '*' | '/';
 
 // sumExpr tokens
 SUMOP: '+' | '-';
@@ -45,6 +52,8 @@ SUMOP: '+' | '-';
 // shiftExpr tokens
 
 // bitAndOrExpr tokens
+BITAND: '&';
+BITOR: '|';
 
 // andOrExpr tokens
 

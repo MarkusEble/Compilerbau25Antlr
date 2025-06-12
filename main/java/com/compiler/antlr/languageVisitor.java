@@ -1,4 +1,4 @@
-// Generated from c:/git/Compilerbau25/src/main/antlr4/language.g4 by ANTLR 4.13.1
+// Generated from /Users/i589213/Documents/dhbw/semester4/compilerbau/Compilerbau25Antlr/language.g4 by ANTLR 4.13.1
 package com.compiler.antlr;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -10,6 +10,13 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  * operations with no return type.
  */
 public interface languageVisitor<T> extends ParseTreeVisitor<T> {
+	/**
+	 * Visit a parse tree produced by the {@code exprMulDivOp}
+	 * labeled alternative in {@link languageParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExprMulDivOp(languageParser.ExprMulDivOpContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code exprSumOp}
 	 * labeled alternative in {@link languageParser#expr}.

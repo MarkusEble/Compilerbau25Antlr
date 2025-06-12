@@ -1,4 +1,4 @@
-// Generated from c:/git/Compilerbau25/src/main/antlr4/language.g4 by ANTLR 4.13.1
+// Generated from /Users/i589213/Documents/dhbw/semester4/compilerbau/Compilerbau25Antlr/language.g4 by ANTLR 4.13.1
 package com.compiler.antlr;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -17,7 +17,7 @@ public class languageParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		NUMBER=1, IDENT=2, LPAREN=3, RPAREN=4, SUMOP=5, WS=6;
+		NUMBER=1, IDENT=2, LPAREN=3, RPAREN=4, MULDIVOP=5, SUMOP=6, WS=7;
 	public static final int
 		RULE_expr = 0;
 	private static String[] makeRuleNames() {
@@ -35,7 +35,7 @@ public class languageParser extends Parser {
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, "NUMBER", "IDENT", "LPAREN", "RPAREN", "SUMOP", "WS"
+			null, "NUMBER", "IDENT", "LPAREN", "RPAREN", "MULDIVOP", "SUMOP", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -99,6 +99,30 @@ public class languageParser extends Parser {
 		public ExprContext() { }
 		public void copyFrom(ExprContext ctx) {
 			super.copyFrom(ctx);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class ExprMulDivOpContext extends ExprContext {
+		public List<ExprContext> expr() {
+			return getRuleContexts(ExprContext.class);
+		}
+		public ExprContext expr(int i) {
+			return getRuleContext(ExprContext.class,i);
+		}
+		public TerminalNode MULDIVOP() { return getToken(languageParser.MULDIVOP, 0); }
+		public ExprMulDivOpContext(ExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof languageListener ) ((languageListener)listener).enterExprMulDivOp(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof languageListener ) ((languageListener)listener).exitExprMulDivOp(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof languageVisitor ) return ((languageVisitor<? extends T>)visitor).visitExprMulDivOp(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 	@SuppressWarnings("CheckReturnValue")
@@ -168,29 +192,47 @@ public class languageParser extends Parser {
 			match(NUMBER);
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(10);
+			setState(13);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,0,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,1,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					{
-					_localctx = new ExprSumOpContext(new ExprContext(_parentctx, _parentState));
-					pushNewRecursionContext(_localctx, _startState, RULE_expr);
-					setState(5);
-					if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
-					setState(6);
-					match(SUMOP);
-					setState(7);
-					expr(3);
+					setState(11);
+					_errHandler.sync(this);
+					switch ( getInterpreter().adaptivePredict(_input,0,_ctx) ) {
+					case 1:
+						{
+						_localctx = new ExprMulDivOpContext(new ExprContext(_parentctx, _parentState));
+						pushNewRecursionContext(_localctx, _startState, RULE_expr);
+						setState(5);
+						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
+						setState(6);
+						match(MULDIVOP);
+						setState(7);
+						expr(4);
+						}
+						break;
+					case 2:
+						{
+						_localctx = new ExprSumOpContext(new ExprContext(_parentctx, _parentState));
+						pushNewRecursionContext(_localctx, _startState, RULE_expr);
+						setState(8);
+						if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
+						setState(9);
+						match(SUMOP);
+						setState(10);
+						expr(3);
+						}
+						break;
 					}
 					} 
 				}
-				setState(12);
+				setState(15);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,0,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,1,_ctx);
 			}
 			}
 		}
@@ -215,22 +257,26 @@ public class languageParser extends Parser {
 	private boolean expr_sempred(ExprContext _localctx, int predIndex) {
 		switch (predIndex) {
 		case 0:
+			return precpred(_ctx, 3);
+		case 1:
 			return precpred(_ctx, 2);
 		}
 		return true;
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\u0006\u000e\u0002\u0000\u0007\u0000\u0001\u0000\u0001\u0000"+
-		"\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000\u0005\u0000\t\b\u0000"+
-		"\n\u0000\f\u0000\f\t\u0000\u0001\u0000\u0000\u0001\u0000\u0001\u0000\u0000"+
-		"\u0000\r\u0000\u0002\u0001\u0000\u0000\u0000\u0002\u0003\u0006\u0000\uffff"+
-		"\uffff\u0000\u0003\u0004\u0005\u0001\u0000\u0000\u0004\n\u0001\u0000\u0000"+
-		"\u0000\u0005\u0006\n\u0002\u0000\u0000\u0006\u0007\u0005\u0005\u0000\u0000"+
-		"\u0007\t\u0003\u0000\u0000\u0003\b\u0005\u0001\u0000\u0000\u0000\t\f\u0001"+
-		"\u0000\u0000\u0000\n\b\u0001\u0000\u0000\u0000\n\u000b\u0001\u0000\u0000"+
-		"\u0000\u000b\u0001\u0001\u0000\u0000\u0000\f\n\u0001\u0000\u0000\u0000"+
-		"\u0001\n";
+		"\u0004\u0001\u0007\u0011\u0002\u0000\u0007\u0000\u0001\u0000\u0001\u0000"+
+		"\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000"+
+		"\u0001\u0000\u0005\u0000\f\b\u0000\n\u0000\f\u0000\u000f\t\u0000\u0001"+
+		"\u0000\u0000\u0001\u0000\u0001\u0000\u0000\u0000\u0011\u0000\u0002\u0001"+
+		"\u0000\u0000\u0000\u0002\u0003\u0006\u0000\uffff\uffff\u0000\u0003\u0004"+
+		"\u0005\u0001\u0000\u0000\u0004\r\u0001\u0000\u0000\u0000\u0005\u0006\n"+
+		"\u0003\u0000\u0000\u0006\u0007\u0005\u0005\u0000\u0000\u0007\f\u0003\u0000"+
+		"\u0000\u0004\b\t\n\u0002\u0000\u0000\t\n\u0005\u0006\u0000\u0000\n\f\u0003"+
+		"\u0000\u0000\u0003\u000b\u0005\u0001\u0000\u0000\u0000\u000b\b\u0001\u0000"+
+		"\u0000\u0000\f\u000f\u0001\u0000\u0000\u0000\r\u000b\u0001\u0000\u0000"+
+		"\u0000\r\u000e\u0001\u0000\u0000\u0000\u000e\u0001\u0001\u0000\u0000\u0000"+
+		"\u000f\r\u0001\u0000\u0000\u0000\u0002\u000b\r";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

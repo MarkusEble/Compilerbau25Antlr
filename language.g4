@@ -62,3 +62,7 @@ CMPOP: '==' | '<' | '>';
 
 // skip whitespaces
 WS: [ \t\r\n]+ -> skip;
+
+// questionMarkExpr tokens
+DC: ':';
+QM: '?';

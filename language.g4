@@ -10,7 +10,7 @@ expr:
 
      // sumExpr
      expr SUMOP expr #exprSumOp |
-     NUMBER #exprNumber
+     NUMBER #exprNumber |
 
      // shifExpr
 
@@ -21,7 +21,7 @@ expr:
      // cmpExpr
 
      // questionMarkExpr
-
+     expr QM expr DC expr #exprQm
 ;
 
 // tokens
@@ -50,7 +50,8 @@ SUMOP: '+' | '-';
 // cmpExpr tokens
 
 // questionMarkExpr tokens
-
+DC: ':';
+QM: '?';
 
 // skip whitespaces
 WS: [ \t\r\n]+ -> skip;

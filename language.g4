@@ -22,7 +22,7 @@ expr:
      expr BITOR expr #exprBitOr |
 
      // andOrExpr
-
+     expr ANDOROP expr #exprAndOr |
      // cmpExpr
      expr CMPOP expr #exprCmpOp |
      NUMBER #exprCmpOp |
@@ -56,7 +56,7 @@ BITAND: '&';
 BITOR: '|';
 
 // andOrExpr tokens
-
+ANDOROP: '&&' | '||';
 // cmpExpr tokens
 CMPOP: '==' | '<' | '>';
 

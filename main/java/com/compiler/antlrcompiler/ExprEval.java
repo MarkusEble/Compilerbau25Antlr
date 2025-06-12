@@ -64,7 +64,18 @@ public class ExprEval extends com.compiler.antlr.languageBaseVisitor<Integer> {
     }
 
      // andOrExpr
-
+    @Override
+     public Integer visitExprAndOr(com.compiler.antlr.languageParser.ExprAndOrContext ctx) {
+         ExprContext operand0 = ctx.expr(0);
+         int operand0Value = visit(operand0);
+         ExprContext operand1 = ctx.expr(1);
+         int operand1Value = visit(operand1);
+         if (ctx.ANDOROP().getText().equals("&&")) {
+             return operand0Value == 0 || operand1Value == 0 ? 0 : 1;
+         } else {
+             return operand0Value == 0 && operand1Value == 0 ? 0 : 1;
+         }
+     }
      // cmpExpr
      @Override
      public Integer visitExprCmpOp(com.compiler.antlr.languageParser.ExprCmpOpContext ctx) {

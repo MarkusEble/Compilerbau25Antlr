@@ -16,6 +16,9 @@ expr:
      NUMBER #exprNumber |
 
      // shifExpr
+     expr SHIFTLEFT expr #exprShiftLeft|
+     expr SHIFTRIGHT expr #exprShiftRight|
+
 
      // bitAndOrExpr
      expr BITAND expr #exprBitAnd |
@@ -51,6 +54,8 @@ MULDIVOP: '*' | '/';
 SUMOP: '+' | '-';
 
 // shiftExpr tokens
+SHIFTLEFT: '<<';
+SHIFTRIGHT: '>>';
 
 // bitAndOrExpr tokens
 BITAND: '&';
